@@ -27,7 +27,7 @@ ZENVYA addresses each pain point with a dedicated, production-ready module:
 * **Neural Price Oracle:** LSTM-driven predictive models provide price trajectories with a "Buy Now / Wait" recommendation and confidence intervals.
 * **Integrity Quotient (EPI):** Sentiment NLP over marketplace reviews surfaces hidden product risks and inflated ratings, giving shoppers an honest "Real Score."
 * **Environmental Stewardship (GreenCart):** Estimates CO2-equivalent per delivery option; highlights the greener choice without sacrificing price.
-* **Oracle Concierge (Co-Pilot):** A conversational, voice-activated assistant guides users from vague intent to a curated shortlist.
+* **ZENVYA Oracle (Co-Pilot):** A conversational, voice-activated assistant guides users from vague intent to a curated shortlist.
 * **Bespoke Atelier:** A neural dressing room that curates intercepts based on user-submitted aesthetic profiles.
 
 ## 5. Unique & Differentiating Features
@@ -37,7 +37,7 @@ ZENVYA introduces original innovations to the commerce landscape:
 - **Environmental Stewardship**: Every delivery option is scored for estimated CO2-equivalent, enabling conscious consumerism.
 - **Micro-Deal Sniper**: A background job continuously monitors flash sales and price drops beating saved alert thresholds.
 - **Counterfactual Price Simulator**: Users see an animated forecast ribbon with confidence bands, powered by seasonal decomposition models.
-- **Linguistic Node Support**: The Oracle Concierge recognizes regional phonetic queries (e.g., "Juta", "Shadi") ensuring accessibility.
+- **Linguistic Node Support**: The ZENVYA Oracle recognizes regional phonetic queries (e.g., "Juta", "Shadi") ensuring accessibility.
 
 ## 6. Development Status
 - UI/UX Integrity: Complete (Cinematic, Dual-Theme, Traditional Typography)

@@ -18,7 +18,7 @@ A cinematic entry point featuring 3D tech artifacts and real-time cursor trackin
 ### 3. Bespoke Atelier (Personal Stylist)
 A high-fidelity neural dressing room. Upload your profile to initiate Aesthetic Mapping, allowing the system to curate intercepts that align with your structural profile and biological color palette.
 
-### 4. Oracle Concierge (Conversational Advisor)
+### 4. ZENVYA Oracle (Conversational Advisor)
 A conversational interface that handles natural language queries, budget tracking, and financial stewardship.
 
 ### 5. Multi-Theme Integrity
