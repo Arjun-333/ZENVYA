@@ -1,36 +1,48 @@
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-from backend.api.core.database import get_db
+from fastapi import APIRouter, HTTPException
+from backend.api.core.data_store import get_product_by_id
+from backend.ml.epi.sentiment import calculate_real_score
 
 router = APIRouter()
 
 @router.get("/{product_id}")
-async def get_product_detail(product_id: int, db: Session = Depends(get_db)):
+async def get_product_detail(product_id: int):
     """
-    Fetch full product details including intelligence data.
+    Fetch full product details with dynamic intelligence data.
     """
+    p = get_product_by_id(product_id)
+    if not p:
+        raise HTTPException(status_code=404, detail="Product not found")
+
+    real_score = calculate_real_score(p["reviews"], p["platform_rating"])
+    
+    # Oracle logic based on price and score
+    rec = "BUY_NOW" if real_score > 4.2 else "WAIT"
+
     return {
-        "id": product_id,
-        "title": "Sony WH-1000XM5 Wireless Headphones",
-        "category": "Electronics",
-        "description": "Industry leading noise cancellation...",
+        "id": p["id"],
+        "title": p["title"],
+        "price": p["price"],
+        "category": p["category"],
         "insights": {
-            "real_score": 4.8,
-            "oracle_recommendation": "BUY_NOW",
-            "confidence_pct": 89
+            "real_score": real_score,
+            "oracle_recommendation": rec,
+            "confidence_pct": int(real_score * 18) # Mocked confidence based on model score
         }
     }
 
 @router.get("/{product_id}/predict")
-async def get_price_prediction(product_id: int, db: Session = Depends(get_db)):
+async def get_price_prediction(product_id: int):
     """
-    Get price forecast from LSTM model.
+    Simulate price flux predictions.
     """
+    p = get_product_by_id(product_id)
+    base_price = p["price"]
+    
     return {
         "product_id": product_id,
-        "recommendation": "BUY_NOW",
+        "recommendation": "BUY_NOW" if random.random() > 0.5 else "WAIT",
         "prediction_intervals": {
-            "7_day": 28500,
-            "14_day": 29000
+            "7_day": int(base_price * 0.98),
+            "14_day": int(base_price * 1.02)
         }
     }
