@@ -15,6 +15,7 @@ import CategorySidebar from "@/components/CategorySidebar";
 import OrdersView from "@/components/OrdersView";
 import CartView from "@/components/CartView";
 import { motion, AnimatePresence } from "framer-motion";
+import SplineSceneBasic from "@/components/ui/spline-demo";
 import { Search, ShoppingBag, User as UserIcon, Sun, Moon, Package, Loader2 } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
 
@@ -211,7 +212,9 @@ export default function Home() {
               className="min-h-screen pt-20 md:pt-28 pb-24 px-4 md:px-8">
               <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6">
                 <CategorySidebar activeCategory={activeCategory} onSelect={handleCategorySelect} />
-                <div className="flex-1">
+                <div className="flex-1 space-y-8">
+                  <SplineSceneBasic />
+                  
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-6 border-b border-border pb-6">
                     <div>
                       <p className="text-primary uppercase tracking-widest text-xs font-bold mb-1">Marketplace</p>
